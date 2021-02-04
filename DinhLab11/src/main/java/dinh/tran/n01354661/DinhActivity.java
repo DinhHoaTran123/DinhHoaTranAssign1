@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 public class DinhActivity extends AppCompatActivity {
     Button button1;
-    Button mybutton_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,11 +21,12 @@ public class DinhActivity extends AppCompatActivity {
        button1 = findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener(){
         @Override
-            public  void onClick(View view) {
+            public void onClick(View view) {
 
                 Toast.makeText(DinhActivity.this,"DinhHoaTran - PhanMinhAnh",Toast.LENGTH_LONG).show();
                 //Website
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/"));
+                startActivities(new Intent[]{browserIntent});
             }
         });
     }
